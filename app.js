@@ -1,24 +1,32 @@
-// Array of images
-const images = [
-    { imgUrl: './images/1.jpg', id: 1, altText: "one" },
-    { imgUrl: './images/1.jpg', id: 2, altText: "two" },
-]
-
-// get the container to hold the images
 const myGallary = document.getElementById('myGallary')
-console.log(myGallary);
 
+let imageIndex = 1
+let totalImages = 100;
+let imagesPerLoad = 9;
 
-// load the images
-const loadTenImages = ()=>{
+const loadTenImages = () => {
+    for (let img = 0; img < imagesPerLoad; img++) {
+
+        if (imageIndex > totalImages) return;
+
+        const image = document.createElement('img')
+
+        image.src = `images/${imageIndex}.jpg`;
+        image.className = "image"
+        
+
+        myGallary.appendChild(image);
+        imageIndex++;
+
+    }
 
 }
-
-// load images the first time
 loadTenImages()
 
-
-// add scrolling even listener to check when the scrolling is almost at the bottom
-
+window.addEventListener("scroll", ()=>{   
+if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+    setTimeout(loadTenImages(), 2000)
+  }
+})
 
 

@@ -12,8 +12,36 @@ body{
 }
 
 .container{
-    max-width: 900px;
+    max-width: 1024px;
     margin: 0 auto;
-    padding: 2rem 4rem;
+    /* padding: 1rem 4rem; */
     background-color: #ffffff;
+    display:grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    gap: 1rem;
+    padding: 2rem; 
+}
+
+.image{
+    height:300px;
+    width:330px;
+    object-fit: cover;
+}
+
+@media screen and (max-width:769px){
+    .container{
+        grid-template-columns: 2fr 1fr;
+    }
+    .image{
+width:100%;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .container{
+        grid-template-columns: 1fr;
+    }
+    .image{
+        width:100%;
+    }
 }
