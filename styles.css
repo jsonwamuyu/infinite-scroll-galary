@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #faf8f9;
+}
+.wrapper{
+    width:100%;
+}
+
+.container{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    background-color: #ffffff;
+}
